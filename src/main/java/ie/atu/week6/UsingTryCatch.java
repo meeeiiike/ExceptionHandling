@@ -22,12 +22,12 @@ public class UsingTryCatch {
                         System.out.println("Your number is " + number);
                         break; // used to break out loop and finish program
                     } else {
-                        // Only runs when integer that's not in range is entered
+                        // Will print once the value is still an integer
                         System.out.println("Not a valid number!\n\nPlease enter a number between 0-9: ");
                     }
                 } catch (NumberFormatException nfe) {
-                    // Only runs when an invalid non-integer value is entered
-                    System.out.println("Not a valid number! Error: " + nfe.getMessage() + "\n\nPlease enter a number between 0-9: ");
+                    // Will only throw exception for non-integer values
+                    System.out.println("Not a valid number!\n\nPlease enter a number between 0-9:");
                 }
             }
         }
