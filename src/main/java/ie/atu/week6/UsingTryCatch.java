@@ -11,17 +11,21 @@ public class UsingTryCatch {
         // this will ensure the resource is
         // closed at the end of the statement,
         // instead of manually closing at the end.
-        try (Scanner in = new Scanner(System.in)){
-            String input = in.nextLine();
-            int number = Integer.parseInt(input);
 
-            if (number >= 0 && number <= 9) {
-                System.out.println("Your number is " + number);
-            } else {
-                System.out.println("Not a valid number");
+        while(true) {
+            try (Scanner in = new Scanner(System.in)) {
+                String input = in.nextLine();
+                int number = Integer.parseInt(input);
+                // Error Handling
+                if (number >= 0 && number <= 9) {
+                    System.out.println("Your number is " + number);
+                    break;
+                } else {
+                    System.out.println("Not a valid number");
+                }
+            } catch (NumberFormatException nfe) {
+                System.out.println("Not a valid number! Error: " + nfe.getMessage());
             }
-        }catch(NumberFormatException nfe){
-            System.out.println("Not a valid number! Error: " + nfe.getMessage());
         }
     }
 }
