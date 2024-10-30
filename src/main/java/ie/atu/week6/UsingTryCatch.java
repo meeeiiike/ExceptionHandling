@@ -30,6 +30,8 @@ public class UsingTryCatch {
                     System.out.println("Not a valid number!\n\nPlease enter a number between 0-9:");
                 }
             }
+        } catch(NumberFormatException nfe){
+            System.out.println("-TEST- Unsure why works with only one catch block");
         }
     }
 }
